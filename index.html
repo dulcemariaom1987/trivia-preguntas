@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Pantalla de Inicio -->
+        <div id="startScreen" class="card">
+            <svg class="icon icon-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: #fbbf24;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+            <h1>Trivia Challenge</h1>
+            <p class="subtitle">Pon a prueba tus conocimientos con 10 preguntas increíbles</p>
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-value" style="color: #fbbf24;">15s</div>
+                    <div class="stat-label">Por pregunta</div>
+                </div>
+                <div>
+                    <div class="stat-value" style="color: #ec4899;">10</div>
+                    <div class="stat-label">Preguntas</div>
+                </div>
+                <div>
+                    <div class="stat-value" style="color: #4ade80;">150pts</div>
+                    <div class="stat-label">Máximo/pregunta</div>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="startGame()">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                ¡Comenzar Trivia!
+            </button>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="gameScreen" class="hidden">
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="game-header">
+                    <div class="stat-box">
+                        <svg fill="currentColor" viewBox="0 0 24 24" style="color: #fbbf24;">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <div class="stat-info">
+                            <div class="stat-info-label">Puntuación</div>
+                            <div class="stat-info-value" id="scoreDisplay">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <svg id="timerIcon" fill="currentColor" viewBox="0 0 24 24" style="color: #4ade80;">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                        </svg>
+                        <div class="stat-info">
+                            <div class="stat-info-label">Tiempo</div>
+                            <div class="stat-info-value" id="timeDisplay">15s</div>
+                        </div>
+                    </div>
+
+                    <div id="streakBadge" class="streak-badge hidden">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <span id="streakDisplay">Racha: 0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="question-header">
+                    <span class="category-badge" id="categoryDisplay">Categoría</span>
+                    <span class="question-counter" id="questionCounter">1 / 10</span>
+                </div>
+                
+                <h2 class="question-text" id="questionText">Pregunta aquí</h2>
+
+                <div class="answers-grid" id="answersGrid"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Resultado -->
+        <div id="resultScreen" class="card hidden">
+            <svg id="resultIcon" class="result-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <h2 class="result-title" id="resultTitle">¡Correcto!</h2>
+            <p class="result-points" id="resultPoints">+150 puntos</p>
+            <button class="btn-primary" onclick="nextQuestion()">
+                <span id="nextButtonText">Siguiente Pregunta</span>
+            </button>
+        </div>
+
+        <!-- Pantalla Final -->
+        <div id="endScreen" class="card hidden">
+            <svg class="icon icon-bounce" fill="currentColor" viewBox="0 0 24 24" style="color: #fbbf24;">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <h1>¡Juego Terminado!</h1>
+            <div class="final-score" id="finalScore">0 puntos</div>
+            
+            <div class="final-stats">
+                <p id="finalStatsText">Respondiste correctamente 0 de 10 preguntas</p>
+                <div class="final-percentage" id="finalPercentage">0%</div>
+            </div>
+
+            <button class="btn-primary" onclick="startGame()">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                Jugar de Nuevo
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
