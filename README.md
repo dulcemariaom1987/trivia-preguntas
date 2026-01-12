@@ -1,74 +1,75 @@
-# 馃幉 Trivia Preguntas
+# Trivia Preguntas
 
-**Trivia Preguntas** es una aplicaci贸n web de trivia interactiva desarrollada con HTML, CSS y JavaScript. Permite a los usuarios responder preguntas tipo quiz con opciones m煤ltiples y recibir retroalimentaci贸n inmediata. Ideal para proyectos de aprendizaje, demostraci贸n de manipulaci贸n del DOM y l贸gica en JavaScript.
-
----
-
-## 馃殌 Descripci贸n
-
-Este proyecto consiste en un juego de trivia que presenta una serie de preguntas con varias opciones de respuesta. El usuario selecciona una respuesta y recibe retroalimentaci贸n inmediata indicando si fue correcta o incorrecta.  
-El objetivo principal del proyecto es demostrar habilidades de desarrollo front-end utilizando tecnolog铆as web nativas, sin frameworks ni librer铆as externas.
+Trivia Preguntas es una aplicacion web de trivia interactiva desarrollada con HTML, CSS y JavaScript. Permite a los usuarios responder preguntas tipo quiz con opciones multiples y recibir retroalimentacion inmediata. Es un proyecto enfocado en la practica de desarrollo front-end y manipulacion del DOM.
 
 ---
 
-## 馃 Funcionalidades
+## Descripcion
 
-- 馃摑 Visualizaci贸n de preguntas con opciones m煤ltiples.
-- 鉁?Validaci贸n de respuestas seleccionadas por el usuario.
-- 馃攧 Interacci贸n din谩mica sin recarga de p谩gina.
-- 馃帹 Interfaz simple y clara para una buena experiencia de usuario.
+Este proyecto consiste en un juego de trivia que presenta una serie de preguntas con varias opciones de respuesta. El usuario selecciona una respuesta y recibe retroalimentacion inmediata indicando si fue correcta o incorrecta.
+
+El objetivo principal del proyecto es demostrar habilidades de desarrollo web utilizando tecnologias nativas del navegador, sin el uso de frameworks o librerias externas.
 
 ---
 
-## 馃З Estructura del Proyecto
+## Funcionalidades
+
+- Visualizacion de preguntas con opciones multiples.
+- Validacion de respuestas seleccionadas por el usuario.
+- Interaccion dinamica sin recarga de pagina.
+- Interfaz simple y clara para una buena experiencia de usuario.
+
+---
+
+## Estructura del Proyecto
 
 ```plaintext
-馃摝 trivia-preguntas
-鈹溾攢鈹€ 馃搫 index.html        # Estructura principal de la aplicaci贸n
-鈹溾攢鈹€ 馃搫 styles.css        # Estilos y dise帽o visual
-鈹斺攢鈹€ 馃搫 script.js         # L贸gica del juego y manejo del DOM
+trivia-preguntas
+├── index.html        # Estructura principal de la aplicacion
+├── styles.css        # Estilos y diseño visual
+└── script.js         # Logica del juego y manejo del DOM
 ```
 
 ---
 
-## 馃洜 Tecnolog铆as Utilizadas
+## Tecnologias Utilizadas
 
-| Tecnolog铆a | Descripci贸n |
-|------------|------------|
-| HTML5      | Estructura sem谩ntica del contenido |
-| CSS3       | Estilos y presentaci贸n visual |
-| JavaScript | L贸gica de negocio e interactividad |
+| Tecnologia | Descripcion |
+|-----------|-------------|
+| HTML5     | Estructura semantica del contenido |
+| CSS3      | Estilos y presentacion visual |
+| JavaScript| Logica de negocio e interactividad |
 
 ---
 
-## 鈻讹笍 C贸mo ejecutar el proyecto
+## Como ejecutar el proyecto
 
-1. Clona este repositorio:
+1. Clonar el repositorio:
    ```bash
    git clone https://github.com/dulcemariaom1987/trivia-preguntas.git
    ```
 
-2. Accede a la carpeta del proyecto:
+2. Acceder a la carpeta del proyecto:
    ```bash
    cd trivia-preguntas
    ```
 
-3. Abre el archivo `index.html` en tu navegador web preferido.
+3. Abrir el archivo index.html en el navegador web preferido.
 
-> 鉁旓笍 No requiere instalaci贸n de dependencias ni servidor local.
+No es necesario instalar dependencias ni configurar un servidor local.
 
 ---
 
-## 馃懇鈥嶐煉?Autor
+## Autor
 
-**Dulce Mar铆a**  
+Dulce Maria  
 GitHub: https://github.com/dulcemariaom1987
 
 ---
 
-
-## 馃Ь Licencia
+## Licencia
 
 Este proyecto es de uso personal y educativo.
 El contenido visual es propiedad de la autora.
+
 
